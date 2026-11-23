@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="160" viewBox="0 0 240 160">
+  <style>
+    .luz { animation: parp 1.4s steps(1) infinite; }
+    @keyframes parp { 50% { opacity: .35; } }
+    .nav { animation: flotar 2.2s ease-in-out infinite alternate; transform-origin: 120px 62px; }
+    @keyframes flotar { to { transform: translateY(-8px) rotate(3deg); } }
+    .est { animation: girar 9s linear infinite; transform-origin: 120px 80px; }
+    @keyframes girar { to { transform: rotate(360deg); } }
+  </style>
+  <rect width="240" height="160" fill="#000020"/>
+  <g fill="#ffffff">
+    <circle cx="20" cy="25" r="1.5"/><circle cx="60" cy="15" r="1"/><circle cx="95" cy="35" r="1.5"/>
+    <circle cx="180" cy="20" r="1"/><circle cx="215" cy="45" r="2"/><circle cx="35" cy="95" r="1"/>
+    <circle cx="205" cy="120" r="1.5"/><circle cx="150" cy="140" r="1"/><circle cx="80" cy="130" r="2"/>
+  </g>
+  <g class="est" stroke="#ffff00" stroke-width="1" opacity=".6">
+    <path d="M120 6 L120 22 M120 138 L120 154 M46 80 L62 80 M178 80 L194 80"/>
+  </g>
+  <path class="luz" d="M100 72 L62 160 L178 160 L140 72Z" fill="#00ffff" opacity=".45"/>
+  <g class="nav">
+    <ellipse cx="120" cy="78" rx="70" ry="18" fill="#c0c0c0" stroke="#000" stroke-width="3"/>
+    <path d="M78 72 Q120 18 162 72Z" fill="#00ffff" stroke="#000" stroke-width="3"/>
+    <path d="M92 66 Q120 32 148 66Z" fill="#ffffff" opacity=".7"/>
+    <ellipse cx="120" cy="80" rx="70" ry="10" fill="#808080" stroke="#000" stroke-width="2"/>
+    <g fill="#ff0000">
+      <circle cx="72" cy="84" r="4"/><circle cx="96" cy="90" r="4"/><circle cx="120" cy="92" r="4"/>
+      <circle cx="144" cy="90" r="4"/><circle cx="168" cy="84" r="4"/>
+    </g>
+  </g>
+  <text x="120" y="20" text-anchor="middle" font-family="Impact,sans-serif" font-size="15" fill="#ff00ff" stroke="#000" stroke-width="2">NOS ESTÁN MIRANDO</text>
+</svg>

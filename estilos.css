@@ -1,0 +1,119 @@
+/* =========================================================
+   LOBOTOMÍA - SOLO REPRODUCTOR
+   ========================================================= */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  color: #0000ff;
+  font-family: Arial, Tahoma, Verdana, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.reproductor {
+  width: min(760px, 100%);
+  padding: 16px;
+}
+
+.cabecera { text-align: center; margin-bottom: 12px; }
+.cabecera h1 { font-size: 30px; margin: 0 0 4px; }
+.slogans { font-size: 14px; margin: 0; }
+
+/* ---------- PANTALLA ---------- */
+.pantalla {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 220px;
+  background: #000022;
+  border: 1px solid #0000ff;
+  overflow: hidden;
+}
+.estrellas {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 10% 20%, #fff 0 1px, transparent 1.5px),
+    radial-gradient(circle at 40% 70%, #9cf 0 1px, transparent 1.5px),
+    radial-gradient(circle at 75% 35%, #fff 0 1px, transparent 1.5px),
+    radial-gradient(circle at 90% 80%, #ff9 0 1px, transparent 1.5px);
+  background-size: 170px 130px, 230px 190px, 300px 220px, 260px 170px;
+}
+.pantalla.reproduciendo .estrellas { animation: deriva 24s linear infinite; }
+@keyframes deriva { to { background-position: 170px 130px, -230px 190px, 300px -220px, -260px -170px; } }
+.pantalla__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 62%;
+  max-width: 330px;
+  transform: translate(-50%, -50%);
+}
+.pantalla.reproduciendo .pantalla__img { animation: flotar 2.4s ease-in-out infinite alternate; }
+@keyframes flotar { to { transform: translate(-50%, -56%); } }
+.subtitulo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+  text-align: center;
+  font-size: 14px;
+  color: #0000ff;
+  background: rgba(255,255,255,.88);
+  padding: 2px 4px;
+}
+.subtitulo.oculto { display: none; }
+.pausa {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255,255,255,.55);
+  color: #0000ff;
+  font-size: 46px;
+  cursor: pointer;
+}
+.pausa small { font-size: 12px; }
+.pantalla.reproduciendo .pausa { display: none; }
+
+/* ---------- CONTROLES ---------- */
+.controles {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 5px;
+  font-size: 12px;
+}
+.ctrl {
+  background: #ffff66;
+  border: 1px solid #0000ff;
+  color: #0000ff;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+.ctrl:hover { background: #fff; text-decoration: underline; }
+.barra { flex: 1; height: 12px; border: 1px solid #0000ff; background: #fff; cursor: pointer; }
+.barra__relleno { height: 100%; width: 0%; background: #0000ff; }
+.tiempo { font-size: 11px; white-space: nowrap; }
+.titulo-video { font-size: 13px; text-align: center; margin: 8px 0 0; }
+
+@media (max-width: 600px) {
+  body { place-items: start center; font-size: 14px; }
+  .reproductor { padding: 8px; }
+  .pantalla { min-height: 170px; }
+  .tiempo { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pantalla.reproduciendo .estrellas,
+  .pantalla.reproduciendo .pantalla__img { animation: none; }
+}

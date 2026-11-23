@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOBOTOMÍA - EL FUTURO DE LA ATENCIÓN</title>
+<meta name="description" content="El futuro de la atención. Ves más, piensas menos. 100% human compatible.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<main class="reproductor">
+
+  <header class="cabecera">
+    <h1>LOBOTOMÍA</h1>
+    <p class="slogans">EL FUTURO DE LA ATENCIÓN · VES MÁS, PIENSAS MENOS · 100% HUMAN COMPATIBLE</p>
+  </header>
+
+  <div class="pantalla" id="pantalla" role="img" aria-label="Vídeo de LOBOTOMÍA">
+    <div class="estrellas"></div>
+    <img src="gifs/ovni.svg" alt="OVNI" class="pantalla__img">
+    <div class="subtitulo" id="subtitulo">EL FUTURO DE LA ATENCIÓN</div>
+    <div class="pausa" id="pausaOverlay">▶<small>CLIC PARA REPRODUCIR</small></div>
+  </div>
+
+  <div class="controles">
+    <button class="ctrl" id="btnPlay" aria-label="Reproducir o pausar">▶</button>
+    <div class="barra" id="barra" role="slider" aria-label="Progreso del vídeo" aria-valuemin="0" aria-valuemax="200" aria-valuenow="0" tabindex="0">
+      <div class="barra__relleno" id="relleno"></div>
+    </div>
+    <span class="tiempo" id="tiempo">00:00 / 03:20</span>
+    <button class="ctrl" id="btnVolumen" aria-label="Silenciar">🔊</button>
+    <button class="ctrl" id="btnSubtitulos" aria-label="Subtítulos">CC</button>
+    <button class="ctrl" id="btnCalidad" aria-label="Calidad">360p</button>
+    <button class="ctrl" id="btnPantalla" aria-label="Pantalla completa">⛶</button>
+  </div>
+
+  <p class="titulo-video" id="videoTitulo">LOBOTOMÍA: EL VIDEO OFICIAL</p>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
